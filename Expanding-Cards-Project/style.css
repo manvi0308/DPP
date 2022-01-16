@@ -1,0 +1,74 @@
+* {
+  font-family: "Roboto", sans-serif;
+  /* Include padding and border in the element's total width and height:*/
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  /* justify-content — controls alignment of all items on the main axis.
+     align-items — controls alignment of all items on the cross axis 
+     */
+  align-items: center;
+  justify-content: center;
+  /* Viewport Height (vh). This unit is based on the height of the viewport.
+     A value of 1vh is equal to 1% of the viewport height.
+   */
+  height: 100vh;
+  /* overflow:hidden prevents scrollbars from showing up, even when they're necessary.*/
+  overflow: hidden;
+  margin: 0;
+  background-color: #CAD5E2;
+}
+h2{
+    color: white;
+    position: relative;
+    top: 55vh;
+    margin-left: 5%;
+}
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  /* 
+  Scales the image as large as possible to fill the container, 
+  stretching the image if necessary. If the proportions of the
+  image differ from the element, it is cropped either vertically 
+  or horizontally so that no empty space remains.
+  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 25px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.panel.active {
+ flex: 5;
+}
+
+@media (max-width: 480px) {
+  .container {
+    /*
+    100vw means 100% of the viewport width.
+    */
+    width: 100vw;
+  }
+  .panel :nth-of-type(4), .panel:nth-of-type(5){
+      display: none;
+  }
+}
